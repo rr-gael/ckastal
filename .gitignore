@@ -1,0 +1,7 @@
+# Following a kind of standard of C libraries; this is the directory
+# that contains the compiled dlls of these project.
+lib
+
+# Ignore any executables on the build directory. This will contain the
+# sample executables when compiled.
+build
