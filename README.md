@@ -1,6 +1,6 @@
-# CDSKit: C Data Structures Kit
+# Ckastal: C Kit for Data Structures and Algorithms
 
-A small and simple library with some data structures I implemented for my uni course.
+A small and simple library with some data structures I implemented for my uni course. Will update with the algorithms implementation when I have a chance or get to that course.
 
 ## Notes
 

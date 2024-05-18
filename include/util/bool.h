@@ -1,6 +1,6 @@
-#ifndef __CSDKIT_BOOL_H__
+#ifndef __CKASTAL_BOOL_H__
 
-#define __CSDKIT_BOOL_H__
+#define __CKASTAL_BOOL_H__
 
 #define bool unsigned char
 
@@ -12,4 +12,4 @@ typedef enum Bool {
     true
 } Bool;
 
-#endif  // __CSDKIT_BOOL_H__
+#endif  // __CKASTAL_BOOL_H__

@@ -12,6 +12,9 @@
     "stddef.h": "c",
     "corecrt.h": "c",
     "string.h": "c",
-    "heap.h": "c"
+    "heap.h": "c",
+    "arraylist.h": "c",
+    "mem.h": "c",
+    "collection.h": "c"
   }
 }

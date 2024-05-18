@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 
     );
 
-    printf("--- CDSKIT HEAP SAMPLE ---\n\n");
+    printf("--- CKASTAL HEAP SAMPLE ---\n\n");
     printf("[INFO]: Inserting 5 integers on heap:\n");
 
     for (int i = 1; i <= 5; i++) {
