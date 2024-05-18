@@ -1,10 +1,8 @@
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "util/bool.h"
+#include "util/mem.h"
 
 #define SUCCESS_BT_OPERATION 0
 

@@ -1,9 +1,8 @@
 #ifndef __LLD_H__
 #define __LLD_H__
 
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "util/bool.h"
+#include "util/mem.h"
 
 typedef struct LLDNode {
     void *value_addr;
@@ -30,6 +29,11 @@ LLDNode *lld_cutfrom(LLD *list_source, LLD *list_target, int target_index);
 
 void lld_empty(LLD *list);
 void lld_free(LLD **list);
+
+#ifdef _INC_STDIO
+
 void lld_print(LLD *list, void print_element(void *));
+
+#endif
 
 #endif /* __LLD_H__ */

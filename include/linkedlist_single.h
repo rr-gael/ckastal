@@ -2,98 +2,73 @@
 
 #define __LINKED_LIST__
 
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "util/data.h"
+#include "util/mem.h"
 
-typedef struct LLNode {
-    void* value_addr;
-    struct LLNode* next;
-} LLNode;
-typedef struct {
-    int length;
-    int node_value_size;
-    struct LLNode* head;
-} LinkedList;
+typedef (*CK_LinkedList_Callback)(CK_LinkedList* list, CK_LLNode* node, size_t index, void* ctx);
 
-LLNode* ll_node_new(void* value_addr);
-LinkedList* ll_new(int node_value_size);
+typedef struct CK_LLNode {
+    CK_DataRef data;
+    struct CK_LLNode* next;
+} CK_LLNode;
 
-/**
- * Adds a new node that contains the value address
- *
- * @returns A pointer to the new node
- */
-LLNode* ll_append(LinkedList* list, void* value_addr);
+typedef struct CK_LinkedList {
+    size_t length;
+
+    CK_Data data;
+
+    CK_LLNode* head;
+    CK_LLNode* tail;
+} CK_LinkedList;
 
 /**
- * Deallocates the last Node and the value_addr of it
- *
- * @returns The new length of the list
+ * Creation
  */
-LLNode* ll_pop(LinkedList* list);
+
+CK_LinkedList ck_linkedlist_new(CK_Data data);
 
 /**
- * Adds a new node in the desired index
- *
- * @returns A pointer to the node added
+ * Insertions
  */
-LLNode* ll_insert(LinkedList* list, int index, void* value_addr);
+
+void ck_linkedlist_push(CK_LinkedList* list, CK_DataRef data);
+
+void ck_linkedlist_unshift(CK_LinkedList* list, CK_DataRef data);
+
+void ck_linkedlist_insert(CK_LinkedList* list, size_t index, CK_DataRef data);
 
 /**
- * Deallocates nodes from a starting index to an specified index, both
- * inclusive.
+ * Reads
  */
-LLNode* ll_delete_index(LinkedList* list, int from, int to);
+
+CK_DataRef ck_linkedlist_get_index(CK_LinkedList* list, size_t index);
+
+CK_DataRef ck_linkedlist_find(CK_LinkedList* list, CK_LinkedList_Callback predicate, void* ctx);
 
 /**
- * Deletes the nodes that match the predicate
- *
- * @returns The amount of nodes deleted
+ * Deletions
  */
-int ll_delete_where(LinkedList* list, bool predicate(void*, int));
 
-void ll_foreach(LinkedList* list, void callback(void*, int, LinkedList*));
+void ck_linkedlist_delete_index(CK_LinkedList* list, size_t index);
 
-/**
- * Sets a new node with the value address to the
- * head of the list and the previous head to the next
- * pointer of the new node
- */
-void ll_unshift(LinkedList* list, void* value_addr);
+void ck_linkedlist_match(CK_LinkedList* list, CK_LinkedList_Callback predicate, void* ctx);
+
+void ck_linkedlist_filter(CK_LinkedList* list, CK_LinkedList_Callback predicate, void* ctx);
 
 /**
- * @brief Bubble sort based on the get_order_weight callback, the
- * higher the value it returns for a node, the upper it will be
- * on the list.
- *
- * @param list The list to sort
- * @param get_order_weight Gets passed in two pointers to values on the list
- * and should return an int that indicates if the first element should go
- * earlier on the list by being a lower value.
+ * Iterators
  */
-void ll_sort(LinkedList* list, int get_order_weight(void*, void*));
+
+CK_LinkedList ck_linkedlist_map(CK_LinkedList* list, CK_LinkedList_Callback callback, void* ctx);
+
+void ck_linkedlist_foreach(CK_LinkedList* list, CK_LinkedList_Callback callback, void* ctx);
 
 /**
- * @brief Copies a list value by value.
- *
- * @param list
- * @param get_copy_value_addr Receives a pointer to the original value to return
- * a pointer to a new allocated value that should be a copy of the original.
- * @return A linked list copy of the original
+ * Destuctors
  */
-LinkedList* ll_copy(LinkedList* list, void* get_copy_value_addr(void*));
 
-/**
- * Deallocates the nodes of the linked list and frees
- * the associated value addresses of them without
- * destroying the linked list
- */
-void ll_delete_all(LinkedList* list);
+void ck_linkedlist_empty(CK_LinkedList* list);
 
-/**
- * Empties the linked list and frees the linked list
- */
-void ll_free(LinkedList** list);
+void ck_linkedlist_free(CK_LinkedList** list);
 
 #endif /** __LINKED_LIST__ */

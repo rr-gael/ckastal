@@ -13,10 +13,9 @@
 #ifndef __HEAP_H__
 #define __HEAP_H__
 
-#include <stdlib.h>
-#include <string.h>
-
 #include "util/bool.h"
+#include "util/mem.h"
+#include "util/string.h"
 
 /**
  * Found on: https://gist.github.com/jemmanuel/b8277e7922e9b9947e2f171cc85f1d01

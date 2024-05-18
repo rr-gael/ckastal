@@ -1,8 +1,8 @@
 #ifndef __QUEUE__
 #define __QUEUE__
 
-#include <stdbool.h>
-#include <stdlib.h>
+#include "util/bool.h"
+#include "util/mem.h"
 
 typedef struct QueueNode {
     void* data;

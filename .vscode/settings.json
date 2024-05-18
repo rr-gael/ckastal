@@ -15,6 +15,10 @@
     "heap.h": "c",
     "arraylist.h": "c",
     "mem.h": "c",
-    "collection.h": "c"
+    "collection.h": "c",
+    "linkedlist_single.h": "c",
+    "linkedlist_double.h": "c",
+    "hashtable.h": "c",
+    "bool.h": "c"
   }
 }
