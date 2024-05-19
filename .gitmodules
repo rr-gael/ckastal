@@ -1,0 +1,3 @@
+[submodule "package/clogg"]
+path = package/clogg
+url = https://github.com/buebos/clogg
