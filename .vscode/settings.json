@@ -19,7 +19,9 @@
     "listsingle.h": "c",
     "linkedlist_double.h": "c",
     "hashtable.h": "c",
-    "bool.h": "c",
-    "data.h": "c"
+    "data.h": "c",
+    "model.h": "c",
+    "memory.h": "c",
+    "push.c": "cpp"
   }
 }
