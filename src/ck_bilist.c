@@ -1,11 +1,7 @@
-#ifndef __CKASTAL_BILIST_MODEL_H__
-#define __CKASTAL_BILIST_MODEL_H__
+#ifndef __CKASTAL_BILIST_C__
+#define __CKASTAL_BILIST_C__
 
-#include "../util/std.h"
-
-#ifndef size_t
-#include <stdlib.h>
-#endif
+#include "../include/util/std.h"
 
 typedef struct Ckastal_BilistNode {
     void *data;
@@ -22,4 +18,4 @@ typedef struct Ckastal_Bilist {
     Ckastal_BilistNode *tail;
 } Ckastal_Bilist;
 
-#endif /** __CKASTAL_BILIST_MODEL_H__ */
+#endif /** __CKASTAL_BILIST_C__ */

@@ -22,6 +22,10 @@
     "data.h": "c",
     "model.h": "c",
     "memory.h": "c",
-    "push.c": "cpp"
+    "push.c": "cpp",
+    "std.h": "c",
+    "_size_t.h": "c",
+    "_node_new.c": "cpp",
+    "clogg.h": "c"
   }
 }
