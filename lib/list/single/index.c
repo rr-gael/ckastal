@@ -1,30 +1,29 @@
-#ifndef __CKASTAL_LIST_C__
-#define __CKASTAL_LIST_C__
+#ifndef __CKASTAL_LIST_SINGLE__
+#define __CKASTAL_LIST_SINGLE__
 
-#include "../include/core/memory.h"
-#include "../include/core/std.h"
-#include "../include/core/unit.h"
+#include "../../../include/core/data.h"
+#include "../../../include/core/init.c"
 
-typedef enum Ckastal_ListMode {
+typedef enum Ck_ListMode {
     CK_LIST_LINEAR = 0,
     CK_LIST_CIRCULAR,
-} Ckastal_ListMode;
+} Ck_ListMode;
 
-typedef struct Ckastal_ListNode {
-    void* data;
-    struct Ckastal_ListNode* next;
-} Ckastal_ListNode;
+typedef struct Ck_ListNode {
+    Ck_Data data;
+    struct Ck_ListNode* next;
+} Ck_ListNode;
 
-typedef struct Ckastal_List {
+typedef struct Ck_List {
     size_t length;
 
-    Ckastal_ListMode mode;
+    Ck_ListMode mode;
 
-    Ckastal_ListNode* head;
-    Ckastal_ListNode* tail;
+    Ck_ListNode* head;
+    Ck_ListNode* tail;
 
-    Ckastal_Unit* unit;
-} Ckastal_List;
+    Ck_DataType* type;
+} Ck_List;
 
 /**
  * Utility functions.
@@ -34,17 +33,17 @@ typedef struct Ckastal_List {
  * @brief Creates a new node.
  *
  * @param data The pointer to store as the data address.
- * @return Ckastal_ListNode*
+ * @return Ck_ListNode*
  */
-Ckastal_ListNode* _ck_list_node_new(void* data) {
-    Ckastal_ListNode* node = ckastal_memory.alloc(sizeof(Ckastal_ListNode));
+Ck_ListNode* _ck_list_node_new(void* data) {
+    Ck_ListNode* node = ck_memory.alloc(sizeof(Ck_ListNode));
 
     node->data = data;
     node->next = NULL;
 
     return node;
 }
-void _ck_list_push_head(Ckastal_List* list, Ckastal_ListNode* node) {
+void _ck_list_push_head(Ck_List* list, Ck_ListNode* node) {
     list->head = node;
     list->tail = list->head;
 
@@ -56,9 +55,9 @@ void _ck_list_push_head(Ckastal_List* list, Ckastal_ListNode* node) {
     list->length += 1;
 }
 
-Ckastal_List ck_list_new(Ckastal_Unit* unit, Ckastal_ListMode mode) {
-    Ckastal_List list = {
-        .unit = unit,
+Ck_List ck_list_new(Ck_DataType* type, Ck_ListMode mode) {
+    Ck_List list = {
+        .type = type,
         .head = NULL,
         .tail = NULL,
         .length = 0,
@@ -68,8 +67,8 @@ Ckastal_List ck_list_new(Ckastal_Unit* unit, Ckastal_ListMode mode) {
     return list;
 }
 
-void ck_list_push(Ckastal_List* list, void* data) {
-    Ckastal_ListNode* node = _ck_list_node_new(data);
+void ck_list_push(Ck_List* list, void* data) {
+    Ck_ListNode* node = _ck_list_node_new(data);
 
     if (!list->head) {
         _ck_list_push_head(list, node);
@@ -86,8 +85,8 @@ void ck_list_push(Ckastal_List* list, void* data) {
     list->length += 1;
 }
 
-void ck_list_unshift(Ckastal_List* list, void* data) {
-    Ckastal_ListNode* node = _ck_list_node_new(data);
+void ck_list_unshift(Ck_List* list, void* data) {
+    Ck_ListNode* node = _ck_list_node_new(data);
 
     if (!list->head) {
         _ck_list_push_head(list, node);
@@ -104,4 +103,4 @@ void ck_list_unshift(Ckastal_List* list, void* data) {
     list->length += 1;
 }
 
-#endif /* __CKASTAL_LIST_C__ */
+#endif /* __CKASTAL_LIST_SINGLE__ */

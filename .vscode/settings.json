@@ -23,9 +23,12 @@
     "model.h": "c",
     "memory.h": "c",
     "push.c": "cpp",
-    "std.h": "c",
+    "init.c": "c",
     "_size_t.h": "c",
     "_node_new.c": "cpp",
-    "clogg.h": "c"
-  }
+    "clogg.h": "c",
+    "type.h": "c",
+    "_malloc.h": "c"
+  },
+  "cmake.sourceDirectory": "/Users/emi/Desktop/software-workspace/ckastal/vendor/clogg"
 }

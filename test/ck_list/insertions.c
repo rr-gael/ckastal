@@ -1,16 +1,16 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include "../../lib/ck_list.c"
+#include "../../lib/list/single/index.c"
 #include "../../vendor/clogg/src/clogg.c"
 
-Ckastal_Memory ckastal_memory = {
+Ck_Memory ck_memory = {
     .alloc = malloc,
     .free = free,
 };
 
 int main(void) {
-    Ckastal_List list = ck_list_new(NULL, CK_LIST_LINEAR);
+    Ck_List list = ck_list_new(NULL, CK_LIST_LINEAR);
 
     for (int i = 1; i <= 100; i++) {
         ck_list_push(&list, (void*)i);
