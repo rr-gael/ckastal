@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "../../lib/ck_list.c"
-#include "../../package/clogg/src/clogg.c"
+#include "../../vendor/clogg/src/clogg.c"
 
 Ckastal_Memory ckastal_memory = {
     .alloc = malloc,

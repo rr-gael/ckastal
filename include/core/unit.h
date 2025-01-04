@@ -8,7 +8,7 @@ typedef void (*Ckastal_UnitPrint)(void*);
 typedef struct {
     size_t size;
     
-    Ckastal_UnitPrint print;
+    Ckastal_UnitPrint to_str;
 } Ckastal_Unit;
 
 #endif /* __CKASTAL_UTIL_UNIT_H__ */

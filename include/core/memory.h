@@ -1,6 +1,8 @@
 #ifndef __CKASTAL_UTIL_MEMORY_H__
 #define __CKASTAL_UTIL_MEMORY_H__
 
+#include "std.h"
+
 typedef void* (*Ckastal_AllocOperation)(size_t);
 typedef void (*Ckastal_FreeOperation)(void*);
 
