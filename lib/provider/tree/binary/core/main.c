@@ -1,8 +1,8 @@
 #ifndef __CKASTAL_BITREE_CORE_MAIN__
 #define __CKASTAL_BITREE_CORE_MAIN__
 
-#include "../../../../include/core/data.h"
-#include "../../../../include/core/init.c"
+#include "../../../../core/data.c"
+#include "../../../../core/init.c"
 
 typedef struct Ck_BitreeNode {
     Ck_Data data;

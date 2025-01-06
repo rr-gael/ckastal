@@ -1,8 +1,8 @@
-#ifndef __CKASTAL_LIST_SINGLE__
-#define __CKASTAL_LIST_SINGLE__
+#ifndef __CKASTAL_LIST_SINGLE_CORE__
+#define __CKASTAL_LIST_SINGLE_CORE__
 
-#include "../../../include/core/data.h"
-#include "../../../include/core/init.c"
+#include "../../../../core/data.c"
+#include "../../../../core/init.c"
 
 typedef enum Ck_ListMode {
     CK_LIST_LINEAR = 0,
@@ -103,4 +103,4 @@ void ck_list_unshift(Ck_List* list, void* data) {
     list->length += 1;
 }
 
-#endif /* __CKASTAL_LIST_SINGLE__ */
+#endif /* __CKASTAL_LIST_SINGLE_CORE__ */

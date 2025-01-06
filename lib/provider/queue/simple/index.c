@@ -3,7 +3,7 @@
 
 #include "../../list/single/index.c"
 
-#include "../../../include/core/data.h"
+#include "../../../core/data.c"
 
 typedef struct Ck_Queue {
     Ck_List list;
@@ -46,7 +46,6 @@ size_t ck_queue_size(Ck_Queue* queue) {
 }
 
 void ck_queue_free(Ck_Queue* queue) {
-    
 }
 
 #endif /* __CKASTAL_QUEUE_H__ */

@@ -1,3 +1,3 @@
-# Ignore any executables on the build directory. This will contain the
-# sample executables when compiled.
+# Ignore any executables that can be generated from the project.
 build
+*.out

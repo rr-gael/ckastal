@@ -1,8 +1,8 @@
 #ifndef __CKASTAL_LIST_DOUBLE__
 #define __CKASTAL_LIST_DOUBLE__
 
-#include "../../../include/core/data.h"
-#include "../../../include/core/init.c"
+#include "../../../core/data.c"
+#include "../../../core/init.c"
 
 typedef struct Ck_BilistNode {
     Ck_Data data;

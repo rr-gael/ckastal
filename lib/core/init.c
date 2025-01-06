@@ -25,14 +25,14 @@ typedef unsigned int size_t;
  * NULL definition
  */
 #ifndef NULL
-#define NULL ((void*)0)
+#define NULL ((void *)0)
 #endif
 
 /**
  * Allocators
  */
-typedef void* (*Ck_AllocOperation)(size_t);
-typedef void (*Ck_FreeOperation)(void*);
+typedef void *(*Ck_AllocOperation)(size_t);
+typedef void (*Ck_FreeOperation)(void *);
 
 typedef struct Ck_Memory {
     Ck_AllocOperation alloc;

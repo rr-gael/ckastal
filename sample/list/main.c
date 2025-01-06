@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../lib/list/single/index.c"
-#include "../vendor/clogg/src/clogg.c"
+#include "../../lib/provider/list/single/index.c"
+#include "../../vendor/clogg/src/clogg.c"
 
 int main(int argc, char **argv) {
     Ck_List list = ck_list_new(NULL, CK_LIST_LINEAR);

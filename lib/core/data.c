@@ -5,7 +5,7 @@
 
 #define Ck_Data void*
 
-typedef void (*Ck_DataTypeToStr)(void*);
+typedef char* (*Ck_DataTypeToStr)(void*);
 
 typedef enum Ck_IteratorResult {
     CK_ITERATOR_CONTINUE = 0,
