@@ -1,7 +1,7 @@
-#ifndef __CKASTAL_BITREE__
-#define __CKASTAL_BITREE__
+#ifndef __CKASTAL_TREEBI__
+#define __CKASTAL_TREEBI__
 
 #include "core/main.c"
-#include "function/traverse.c"
+#include "function/iterator_breadth.c"
 
-#endif /** __CKASTAL_BITREE__ */
+#endif /** __CKASTAL_TREEBI__ */

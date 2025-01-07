@@ -7,9 +7,11 @@ typedef void *(*Ck_IteratorNext)(Ck_Iterator *self);
 
 typedef struct Ck_Iterator {
     void *_collection;
-    void *_cursor;
 
+    void *_cursor;
     size_t _index;
+
+    void *_ctx;
 
     Ck_IteratorNext next;
 } Ck_Iterator;
