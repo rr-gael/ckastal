@@ -5,7 +5,7 @@
 #include "../../../queue/simple/index.c"
 #include "../core/main.c"
 
-static void *_ck_treebi_iterator_breadth_next(Ck_Iterator *self) {
+void *_ck_treebi_iterator_breadth_next(Ck_Iterator *self) {
     Ck_Queue *queue = self->_ctx;
     Ck_Treebi *tree = self->_collection;
 

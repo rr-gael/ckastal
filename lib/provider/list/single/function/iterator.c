@@ -5,7 +5,7 @@
 
 #include "../core/main.c"
 
-static void* _ck_list_iterator_next(Ck_Iterator* self) {
+void* _ck_list_iterator_next(Ck_Iterator* self) {
     Ck_List* list = self->_collection;
 
     if (NULL == self->_cursor) {

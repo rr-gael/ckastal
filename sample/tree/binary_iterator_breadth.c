@@ -7,7 +7,7 @@
 #define deref(ptr, type) (*(type *)(ptr))
 #define cast(type, void_ptr) ((type *)(void_ptr))
 
-static Ck_DataTypeCompareResult compare(void *a, void *b) {
+Ck_DataTypeCompareResult compare(void *a, void *b) {
     int l = deref(a, int);
     int r = deref(b, int);
 
