@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "../../include/syntax_utils.h"
 #include "../../lib/provider/list/single/index.c"
-
-#define deref(ptr, type) (*(type *)(ptr))
-#define cast(type, void_ptr) ((type *)(void_ptr))
 
 Ck_DataType integer = {
     .size = sizeof(int),
@@ -12,7 +10,7 @@ Ck_DataType integer = {
 };
 
 int main(void) {
-    Ck_List list = ck_list_new(&integer, CK_LIST_LINEAR);
+    Ck_List list = ck_list_init(&integer, CK_LIST_LINEAR);
     Ck_Iterator iterator = ck_list_iterator(&list);
 
     int integers[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

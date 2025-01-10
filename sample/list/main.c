@@ -5,7 +5,7 @@
 #include "../../vendor/clogg/src/clogg.c"
 
 int main(int argc, char **argv) {
-    Ck_List list = ck_list_new(NULL, CK_LIST_LINEAR);
+    Ck_List list = ck_list_init(NULL, CK_LIST_LINEAR);
 
     ck_list_push(&list, "");
 

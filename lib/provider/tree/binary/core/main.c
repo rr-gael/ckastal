@@ -17,7 +17,7 @@ typedef struct Ck_Treebi {
     Ck_DataType* _type;
 } Ck_Treebi;
 
-Ck_TreebiNode _ck_treebi_node_new(Ck_Data data) {
+Ck_TreebiNode _ck_treebi_node_init(Ck_Data data) {
     Ck_TreebiNode node = {
         .data = data,
         .left = NULL,
@@ -27,7 +27,7 @@ Ck_TreebiNode _ck_treebi_node_new(Ck_Data data) {
     return node;
 }
 
-Ck_Treebi ck_treebi_new(Ck_DataType* type) {
+Ck_Treebi ck_treebi_init(Ck_DataType* type) {
     Ck_Treebi tree = {
         ._root = NULL,
         ._size = 0,
@@ -40,7 +40,7 @@ Ck_Treebi ck_treebi_new(Ck_DataType* type) {
 void ck_treebi_insert(Ck_Treebi* self, Ck_Data data) {
     if (NULL == self->_root) {
         Ck_TreebiNode* node = ck_memory.alloc(sizeof(Ck_TreebiNode));
-        *node = _ck_treebi_node_new(data);
+        *node = _ck_treebi_node_init(data);
 
         self->_root = node;
 
@@ -65,7 +65,7 @@ void ck_treebi_insert(Ck_Treebi* self, Ck_Data data) {
         }
 
         Ck_TreebiNode* node = ck_memory.alloc(sizeof(Ck_TreebiNode));
-        *node = _ck_treebi_node_new(data);
+        *node = _ck_treebi_node_init(data);
 
         if (comparison == CK_LT || comparison == CK_EQ) {
             current->left = node;

@@ -55,7 +55,7 @@ void _ck_list_push_head(Ck_List* list, Ck_ListNode* node) {
     list->length += 1;
 }
 
-Ck_List ck_list_new(Ck_DataType* type, Ck_ListMode mode) {
+Ck_List ck_list_init(Ck_DataType* type, Ck_ListMode mode) {
     Ck_List list = {
         .type = type,
         .head = NULL,

@@ -9,9 +9,9 @@ typedef struct Ck_Queue {
     Ck_List list;
 } Ck_Queue;
 
-Ck_Queue ck_queue_new(Ck_DataType* type) {
+Ck_Queue ck_queue_init(Ck_DataType* type) {
     Ck_Queue queue = {
-        .list = ck_list_new(type, CK_LIST_LINEAR),
+        .list = ck_list_init(type, CK_LIST_LINEAR),
     };
     return queue;
 }

@@ -2,6 +2,7 @@
 #define __CKASTAL_TREEBI__
 
 #include "core/main.c"
+#include "function/with_int.c"
 #include "function/iterator_breadth.c"
 
 #endif /** __CKASTAL_TREEBI__ */
